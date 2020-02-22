@@ -27,14 +27,23 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <h3>Test vuex</h3>
+    <button type="button" @click="testVuex">TEST</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    ...mapActions(['updateName']),
+    testVuex(){
+      this.updateName("Tomas" +( Math.random() * 100))
+    }
   }
 }
 </script>
