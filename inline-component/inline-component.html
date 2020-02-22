@@ -7,10 +7,19 @@
   </head>
   <body>
     <div id="app">
-      
+      <!-- Deben definirse dentro el elemento  de la instancia root-->
+      <button-awesome />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script type="text/javascript">
+      Vue.component('button-awesome', {
+        data() {
+          return {
+            count: 0
+          }
+        },
+        template: '<button v-on:click="count++">Me ha pulsado {{ count }} veces.</button>'
+      })
       new Vue({
         el: "#app"
       });
