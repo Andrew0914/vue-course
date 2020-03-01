@@ -1,12 +1,15 @@
 <template>
   <button type="button" class="btn">
-      Awesome!
+      {{ awesomeName }}
   </button>
 </template>
 
 <script>
 export default {
-
+    name:'AwesomeButton',
+    props: {
+        awesomeName: String
+    }
 }
 </script>
 
