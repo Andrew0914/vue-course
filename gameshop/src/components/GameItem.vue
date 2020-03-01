@@ -3,20 +3,24 @@
     <a href="#" class="mb2">
       <img
         class="game_image"
-        src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/small_image/205x253/9df78eab33525d08d6e5fb8d27136e95/s/o/sonic-mania-plus-xbox-ps4_2.png"
-        alt="SONIC MANIA PLUS"
+        :src="urlImage"
+        :alt="name"
       />
     </a>
 
-    <a href="#" class="game_name mb2" title="SONIC MANIA PLUS">Sonic Mania Plus</a>
+    <a href="#" class="game_name mb2" :title="name">
+      {{ name }}
+    </a>
   
     <p class="game_price mb2">
-      <span>Nuevo</span>
+      <span>
+        {{ isNew ? "New" : "Used"}}
+      </span>
       <span>Precio: </span>
-      <span>$899</span>
+      <span>${{ price }}</span>
     </p>
   
-    <div class="game_description">Sonic Mania Plus es la versión física mejorada de la versión digital original de Sonic Mania</div>
+    <div class="game_description">{{ description }}</div>
 
   </div>
 </template>
