@@ -16,7 +16,7 @@ export default {
   },
   data(){
     return {
-      name: "My awesome butto"
+      name: "My awesome button"
     }
   },
 }

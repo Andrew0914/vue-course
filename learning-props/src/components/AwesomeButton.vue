@@ -1,6 +1,6 @@
 <template>
-  <button type="button" class="btn">
-      {{ awesomeName }}
+  <button type="button" class="btn" @click="mutateProp">
+      {{ transformedName }}
   </button>
 </template>
 
@@ -9,6 +9,18 @@ export default {
     name:'AwesomeButton',
     props: {
         awesomeName: String
+    },
+    computed: {
+        transformedName(){
+            // esto es correcto ya que transformas tu prop sin modificarla
+            return this.awesomeName.toUpperCase()
+        }
+    },
+    methods:{
+        mutateProp(){
+            // esto no debe hacerce
+            this.awesomeName = this.awesomeName.toLowerCase()
+        }
     }
 }
 </script>
