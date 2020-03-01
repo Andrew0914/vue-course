@@ -22,13 +22,42 @@
 </template>
 
 <script>
-export default {};
+import {isValidURL} from '@/utils/validations'
+
+export default {
+  name: "GameItem",
+  props:{
+    name:{
+      type: String,
+      required: true
+    },
+    description:{
+      type: String,
+      default: ''
+    },
+    price:{
+      type: Number,
+      required: true
+    },
+    isNew:{
+      type: Boolean,
+      default: true
+    },
+    urlImage:{
+      type: String,
+      required: true,
+      validator: function(value){
+        return isValidURL(value)
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
 .game {
   max-width: 215px;
-  border: 1px solid #D3D3D3;
+  border: 1px solid #F2F2F2;
   padding: 16px;
   border-radius: 3px;
   box-shadow: 1px 2px 3px #bdddbd;
