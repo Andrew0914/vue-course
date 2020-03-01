@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <br>
-    <AwesomeButton :awesome-name="name" />
+    <AwesomeButton :awesome-name="name" type="submit" class="button-blue" customx="50" />
   </div>
 </template>
 
@@ -30,5 +30,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.button-blue{
+  color: white;
+  background-color: blueviolet;
 }
 </style>
