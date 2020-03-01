@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <br>
-    <AwesomeButton />
+    <AwesomeButton :awesome-name="name" />
   </div>
 </template>
 
@@ -13,7 +13,12 @@ export default {
   name: 'App',
   components: {
     AwesomeButton
-  }
+  },
+  data(){
+    return {
+      name: "My awesome butto"
+    }
+  },
 }
 </script>
 
