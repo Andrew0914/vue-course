@@ -20,7 +20,16 @@
       <span>${{ price }}</span>
     </div>
   
-    <div class="game_description">{{ description }}</div>
+    <div class="game_description mb2">{{ description }}</div>
+
+    <button v-if="stock" class="game_button">Buy</button>
+    <p v-else>sold out</p>
+
+    <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
+
+    <div v-show="showDetails" class="game_description">
+      {{ details }}
+    </div>
 
   </div>
 </template>
@@ -39,9 +48,17 @@ export default {
       type: String,
       default: ''
     },
+    details:{
+      type: String,
+      default: ''
+    },
     price:{
       type: Number,
       required: true
+    },
+    stock:{
+      type:Number,
+      required:true
     },
     isNew:{
       type: Boolean,
@@ -57,6 +74,11 @@ export default {
     color:{
       type: String,
       default: '#F2F2F2'
+    }
+  },
+  data(){
+    return {
+      showDetails: false
     }
   }
 }
@@ -106,5 +128,11 @@ export default {
 .game_condition{
   font-size: 16px;
   letter-spacing: 3px;
+}
+
+.game_button{
+  width: 70%;
+  display: block;
+  margin: 8px  auto
 }
 </style>
