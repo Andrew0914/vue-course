@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CardPresentation 
+      title="Welcome to Vue course"
+      description="This is the vue course, so you can learn a lot of things about Vue. Is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. "
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CardPresentation from './components/CardPresentation.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CardPresentation
   }
 }
 </script>
