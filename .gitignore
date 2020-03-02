@@ -1,3 +1,4 @@
 gameshop/node_modules
 learning-props/node_modules
 demo-vue-devtools/node_modules
+*/**/node_modules
