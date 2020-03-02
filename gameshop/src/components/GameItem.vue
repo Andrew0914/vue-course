@@ -1,5 +1,5 @@
 <template>
-  <div class="game">
+  <div class="game" :style="{borderColor: color}">
     <a href="#" class="mb2">
       <img
         class="game_image"
@@ -12,13 +12,13 @@
       {{ name }}
     </a>
   
-    <p class="game_price mb2">
-      <span>
+    <div class="game_price mb2">
+      <p :class="[{'game_new' : isNew}, 'game_condition']">
         {{ isNew ? "New" : "Used"}}
-      </span>
+      </p>
       <span>Precio: </span>
       <span>${{ price }}</span>
-    </p>
+    </div>
   
     <div class="game_description">{{ description }}</div>
 
@@ -53,6 +53,10 @@ export default {
       validator: function(value){
         return isValidURL(value)
       }
+    },
+    color:{
+      type: String,
+      default: '#F2F2F2'
     }
   }
 }
@@ -92,5 +96,15 @@ export default {
 
 .mb2{
   margin-bottom: 16px; 
+}
+
+.game_new{
+  color: gold;
+  text-shadow: 1px 1px 2px black;
+}
+
+.game_condition{
+  font-size: 16px;
+  letter-spacing: 3px;
 }
 </style>

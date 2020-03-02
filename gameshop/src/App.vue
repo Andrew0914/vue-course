@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <GameItem
+      color="lightblue"
       :price="899"
       :is-new="true"
       name="Sonic Mania Plus"
