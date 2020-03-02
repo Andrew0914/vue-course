@@ -1,9 +1,9 @@
 <template>
   <div :class="['card',{ 'card__important': isImportant} , 'x' + size]">
-      <h1>
+      <h1 :style="{color}">
           {{title}}
       </h1>
-      <p>{{ description }}</p>
+      <p :style="{color}">{{ description }}</p>
   </div>
 </template>
 
@@ -29,6 +29,10 @@ export default {
             validator: function(size){
                 return [360,480,520].indexOf(size)  > -1
             }
+        },
+        color:{
+            type : String,
+            default: 'black'
         }
     }
 }

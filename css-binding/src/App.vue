@@ -2,6 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <CardPresentation 
+      color="blue"
       :is-important="true"
       :size="520"
       title="Welcome to Vue course"
