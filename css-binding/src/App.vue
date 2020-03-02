@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <CardPresentation 
       :is-important="true"
+      :size="520"
       title="Welcome to Vue course"
       description="This is the vue course, so you can learn a lot of things about Vue. Is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. "
     />
