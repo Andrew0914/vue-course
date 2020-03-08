@@ -1,11 +1,15 @@
 <template>
   <div id="app">
     <ul>
-      <li v-for="fruit in fruits" :key="fruit">{{ fruit }}</li>
+      <li v-for="(fruit , index) in fruits" :key="fruit">
+        {{ index }} - {{ fruit }}
+      </li>
     </ul>
     <hr>
     <ul>
-      <li v-for="feature in features" :key="feature">{{ feature }}</li>
+      <li v-for="(feature, key) in features" :key="feature">
+        {{key}} : {{ feature }}
+      </li>
     </ul>
   </div>
 </template>
