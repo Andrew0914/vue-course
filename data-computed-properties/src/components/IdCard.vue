@@ -1,23 +1,33 @@
 <template>
   <div class="id__card">
-      <img src="" alt="id image">
+      <img :src="user.image" :alt="user.name ">
       <div>
-          <h4>Nombre</h4>
-          <p>email</p>
-          <p>Acerca de</p>
+          <h4>Name: {{ user.name }} </h4>
+          <p>Email: {{ user.email }} </p>
+          <p>About: {{ user.about}} </p>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+    name: 'IdCard',
+    data(){
+        return {
+            user: {
+                image: "http://codelapps.com/wp-content/uploads/2019/04/andrew.png",
+                email: "ANDREWALANGM@gmail.com",
+                name: "andrew alan gonzalez miranda",
+                about:"I am a programmer"
+            }
+        }
+    }
 }
 </script>
 
 <style scoped>
     .id__card{
-        width: 50%;
+        width: 33%;
         border-radius: 5px;
         background-color: #4f4f4f;
         padding: 16px;
