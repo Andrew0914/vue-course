@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <h1>
+      {{ name | uppercase }}
+    </h1>
   </div>
 </template>
 
@@ -9,6 +12,16 @@
 
 export default {
   name: 'App',
+  data(){
+    return {
+      name: "marty mcfly"
+    }
+  },
+  filters: {
+    uppercase(name){
+      return name.toUpperCase()
+    }
+  }
 }
 </script>
 
