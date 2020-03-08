@@ -22,7 +22,7 @@
   
     <div class="game_description mb2">{{ description }}</div>
 
-    <button v-if="stock" class="game_button">Add to wish lit</button>
+    <button v-if="stock" class="game_button" @click="addToWishList">Add to wish lit</button>
     <p v-else>sold out</p>
 
     <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
@@ -90,6 +90,11 @@ export default {
         status: this.isNew ? "New" : "Used",
         appereance: {'game_new' : this.isNew}
       }
+    }
+  },
+  methods:{
+    addToWishList(){
+      console.warn(this.name, " was added to wish list")
     }
   }
 }
