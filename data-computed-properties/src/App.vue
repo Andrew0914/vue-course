@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <IdCard />
+    <IdCard mode="light" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  background-color: #B0B0B0;
+  background-color: #FFF;
   padding: 16px;
 }
 </style>
