@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>
-      {{ name | uppercase | toFuture}}
+      {{ name | uppercase | toFuture | withWho('doc!')}}
     </h1>
   </div>
 </template>
@@ -20,6 +20,9 @@ export default {
   filters: {
     uppercase(name){
       return name.toUpperCase()
+    },
+    withWho(action , who){
+      return `${action} with ${who}`
     }
   }
 }
