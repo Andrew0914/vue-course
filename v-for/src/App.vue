@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <ul v-for="fruit in fruits" :key="fruit">
-      <li>{{ fruit }}</li>
+    <ul>
+      <li v-for="fruit in fruits" :key="fruit">{{ fruit }}</li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="feature in features" :key="feature">{{ feature }}</li>
     </ul>
   </div>
 </template>
@@ -13,7 +17,12 @@ export default {
   name: 'App',
   data(){
     return {
-      fruits: ["banana", "orange", "lemon", "apple", "kiwi"]
+      fruits: ["banana", "orange", "lemon", "apple", "kiwi"],
+      features: {
+        speed: "fast",
+        power: "strong",
+        weekness: "cryptonite"
+      }
     }
   }
 }
