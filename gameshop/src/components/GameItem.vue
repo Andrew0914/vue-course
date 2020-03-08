@@ -106,8 +106,9 @@ export default {
   border: 1px solid #F2F2F2;
   padding: 16px;
   border-radius: 3px;
-  box-shadow: 1px 2px 3px #bdddbd;
+  box-shadow: 2px 3px 4px #bdbdbd;
   text-align: center;
+  background-color: white;
 }
 
 .game_image {
