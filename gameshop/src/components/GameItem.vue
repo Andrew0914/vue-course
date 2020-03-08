@@ -1,5 +1,5 @@
 <template>
-  <div class="game" :style="{borderColor: color}">
+  <div class="game" :style="borderColor">
     <a href="#" class="mb2">
       <img
         class="game_image"
@@ -13,8 +13,8 @@
     </a>
   
     <div class="game_price mb2">
-      <p :class="[{'game_new' : isNew}, 'game_condition']">
-        {{ isNew ? "New" : "Used"}}
+      <p :class="[gameStatus.appereance, 'game_condition']">
+        {{ gameStatus.status }}
       </p>
       <span>Precio: </span>
       <span>${{ price }}</span>
@@ -22,7 +22,7 @@
   
     <div class="game_description mb2">{{ description }}</div>
 
-    <button v-if="stock" class="game_button">Buy</button>
+    <button v-if="stock" class="game_button">Add to wish lit</button>
     <p v-else>sold out</p>
 
     <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
@@ -79,6 +79,17 @@ export default {
   data(){
     return {
       showDetails: false
+    }
+  },
+  computed:{
+    borderColor (){
+      return { borderColor: this.color}
+    },
+    gameStatus(){
+      return {
+        status: this.isNew ? "New" : "Used",
+        appereance: {'game_new' : this.isNew}
+      }
     }
   }
 }
