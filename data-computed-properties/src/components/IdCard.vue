@@ -1,11 +1,19 @@
 <template>
-  <div class="id__card">
-    <img :src="user.image" :alt="user.name " />
-    <div>
-      <h4>Name: {{ user.name }}</h4>
-      <p>Email: {{ getValidEmail }}</p>
-      <p>About: {{ user.about}}</p>
+  <div>
+    <div class="id__card">
+      <img :src="user.image" :alt="user.name " />
+      <div>
+        <h4>Name: {{ user.name }}</h4>
+        <p>Email: {{ getValidEmail }}</p>
+        <p>About: {{ user.about}}</p>
+        <p>
+            {{ currentDate }}
+        </p>
+      </div>
     </div>
+    <!-- Para cambiar el alor y ver en accion la reactividad -->
+    <input type="text" v-model="user.email" />
+    <button @click="updateDate">Update Date</button>
   </div>
 </template>
 
@@ -14,6 +22,7 @@ export default {
   name: "IdCard",
   data() {
     return {
+      today: new Date(),
       user: {
         image: "http://codelapps.com/wp-content/uploads/2019/04/andrew.png",
         email: "ANDREWALANGM@gmail.com",
@@ -25,6 +34,15 @@ export default {
   computed: {
     getValidEmail() {
       return this.user.email.toLowerCase();
+    },
+    currentDate(){
+        return this.today.toString()
+    }
+  },
+  methods: {
+    updateDate() {
+        this.today.setDate(this.today.getDate() + 1)
+        console.log(this.today)
     }
   }
 };
@@ -47,5 +65,12 @@ export default {
   height: 120px;
   margin-right: 16px;
   border-radius: 3px;
+}
+
+input,button {
+  height: 32px;
+  width: 200px;
+  margin: 16px auto;
+  display:block;
 }
 </style>
