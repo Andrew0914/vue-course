@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <img class="user__photo" src="../assets/woman.png" alt="user" />
+    <img class="user__photo" :src="randomImage()" alt="user" />
     <div class="user__info">
       <div class="info__personal">
         <b>Personal</b>
@@ -17,7 +17,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "UserBadge",
+  props: {
+    user: {
+      type: Object,
+      require: true
+    }
+  },
+  methods: {
+    randomImage() {
+      const photos = [require("../assets/woman.png"), require("../assets/man.png")];
+      const randomIndex = Math.floor(Math.random() * photos.length);
+      return photos[randomIndex];
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -25,7 +40,7 @@ export default {};
   display: flex;
   flex-flow: row;
   width: 480px;
-  margin: 0 auto;
+  margin: 16px auto;
   box-shadow: 1px 3px 10px gray;
   padding: 16px;
   border-radius: 5px;
