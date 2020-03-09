@@ -4,13 +4,13 @@
     <div class="user__info">
       <div class="info__personal">
         <b>Personal</b>
-        <p>Name:</p>
-        <p>Email:</p>
+        <p>Name: {{user.name}}</p>
+        <p>Email: {{user.email}}</p>
       </div>
       <div class="info__contact">
         <b>Contact</b>
-        <p>Phone:</p>
-        <p>Website:</p>
+        <p>Phone: {{user.phone}}</p>
+        <p>Website: {{user.website}} </p>
       </div>
     </div>
   </div>
@@ -55,9 +55,15 @@ export default {
   background-color: #f3f3f3;
 }
 
+.info__personal,
+.info__contact {
+    text-align: left;
+}
+
 .info__personal p,
 .info__contact p {
   margin: 2px 0;
-  text-align: left;
 }
+
+
 </style>
