@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    
+    <UserBadge />
   </div>
 </template>
 
 <script>
-
-
+import UserBadge from '@/components/UserBadge'
 export default {
   name: 'App',
+  components: {
+    UserBadge
+  }
 }
 </script>
 
