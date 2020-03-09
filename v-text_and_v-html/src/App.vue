@@ -1,14 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <p />
-    <div />
+    <p v-text="message" />
+    <p> {{message}} </p>
+    <div v-html="message" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  data(){
+    return {
+      message: "Hello world <b>guys!</b>"
+    }
+  }
 };
 </script>
 
