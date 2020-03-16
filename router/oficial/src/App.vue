@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TheNavbar />
+    <TheNavbar :links="links" />
     <router-view></router-view>
   </div>
 </template>
@@ -11,6 +11,14 @@ export default {
   name: 'App',
   components:{
     TheNavbar
+  },
+  data(){
+    return {
+      links: [
+        { label: "Home", route: "/" },
+        { label: "About", route: "/about" }
+      ]
+    }
   }
 }
 </script>

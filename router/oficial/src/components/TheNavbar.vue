@@ -7,13 +7,11 @@
 <script>
 export default {
   name: "TheNavbar",
-  data() {
-    return {
-      links: [
-        { label: "Home", route: "/" },
-        { label: "About", route: "/about" }
-      ]
-    };
+  props: {
+    links: {
+      type: Array,
+      default: new Array()
+    }
   }
 };
 </script>
@@ -25,9 +23,9 @@ nav {
   margin-bottom: 48px;
 }
 
-a{
-    color: navy;
-    font-size: 24px;
-    margin-right: 16px;
+a {
+  color: navy;
+  font-size: 24px;
+  margin-right: 16px;
 }
 </style>
