@@ -2,6 +2,7 @@
   <div class="games">
     <GameItem
       v-for="(game, index) in gameitems"
+      :id="game.id"
       :color="game.color"
       :price="game.price"
       :stock="game.stock"
