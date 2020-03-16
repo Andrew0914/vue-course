@@ -1,48 +1,64 @@
 <template>
   <div id="app">
-    <GameItem
-      v-for="(game, index) in gameitems"
-      :color="game.color"
-      :price="game.price"
-      :stock="game.stock"
-      :is-new="game.isNew"
-      :name="game.name"
-      :description="game.description"
-      :url-image="game.image" 
-      :details="game.details"
-      :key="index"
-    />
+    <TheNavbar :links="links" />
+    <div class="games">
+      <GameItem
+        v-for="(game, index) in gameitems"
+        :color="game.color"
+        :price="game.price"
+        :stock="game.stock"
+        :is-new="game.isNew"
+        :name="game.name"
+        :description="game.description"
+        :url-image="game.image"
+        :details="game.details"
+        :key="index"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import TheNavbar from "@/components/TheNavbar";
 import GameItem from "@/components/GameItem";
-import { gameitems } from './gameitems'
+import { gameitems } from "./gameitems";
+
 export default {
   name: "App",
-  components:{
-    GameItem
+  components: {
+    GameItem,
+    TheNavbar
   },
-  data(){
+  data() {
     return {
-      gameitems
-    }
+      gameitems,
+      links: []
+    };
   }
 };
 </script>
 
 <style>
-body{
+body {
   background-color: #f2f2f2;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  display: flex;
-  margin-top: 24px;
-  padding: 16px;
+  width: 1060px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-#app div{
-  margin-right: 16px;
+.games {
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 16px;
+  width: 1060px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.games div {
+  margin-bottom: 16px;
 }
 </style>
