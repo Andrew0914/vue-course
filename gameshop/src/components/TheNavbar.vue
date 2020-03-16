@@ -7,6 +7,7 @@
       :key="link.label"
       class="link"
     >{{ link.label }}</router-link>
+    <img src="../assets/shopping-cart.png" @click="openCar"/>
   </nav>
 </template>
 
@@ -17,6 +18,11 @@ export default {
     links: {
       type: Array,
       default: new Array()
+    }
+  },
+  methods:{
+    openCar(){
+      this.$router.push('/car')
     }
   }
 };
@@ -34,6 +40,12 @@ export default {
   box-sizing: border-box;
 }
 
+.navbar img {
+  width: 32px;
+  height: 32px;
+  margin: 0 16px 0px auto;
+  cursor: pointer;
+}
 .navbar .link {
   color: white;
   font-size: 20px;
