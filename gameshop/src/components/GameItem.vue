@@ -13,7 +13,7 @@
 
     <div class="game_description mb2">{{ description }}</div>
 
-    <button v-if="stock" class="game_button" @click="addToWishList">Add to wish lit</button>
+    <ActionButton v-if="stock" class="game_button" @addToWishList="addToWishList" label="Add to wish list" event="addToWishList"/>
     <p v-else>sold out</p>
 
     <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
@@ -24,9 +24,13 @@
 
 <script>
 import { isValidURL } from "@/utils/validations";
+import ActionButton from "./ActionButton"
 
 export default {
   name: "GameItem",
+  components:{
+    ActionButton
+  },
   props: {
     id: {
       type: Number,
@@ -86,7 +90,7 @@ export default {
   },
   methods: {
     addToWishList() {
-      console.warn(this.name, " was added to wish list");
+      alert(`You have added to wishlist: ${this.name}`);
     },
     openDetails(id) {
       this.$router.push({ name: 'game', params: { id } });
@@ -146,7 +150,6 @@ export default {
 
 .game_button {
   width: 70%;
-  display: block;
   margin: 8px auto;
 }
 </style>
