@@ -11,7 +11,7 @@
       <span>Precio:</span>
       <span>${{ game.price }}</span>
       <br />
-      <button v-if="game.stock" class="game_button" @click="addToWishList">Add to wish lit</button>
+      <button v-if="game.stock" class="game_button" >Add to wish lit</button>
       <p v-else>sold out</p>
     </div>
   </div>
@@ -30,8 +30,7 @@ export default {
   },
   computed: {
     game() {
-      console.log(typeof this.id);
-      return gameitems.find(item => item.id === this.id);
+      return gameitems.find(item => item.id == this.id);
     }
   }
 };
