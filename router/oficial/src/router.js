@@ -16,7 +16,7 @@ const routes = [
       { path: "", component: Mision },
     ]
   },
-  { path: "/user/:id", component: User }
+  { path: "/user/:id", name:"user", component: User }
 ];
 
 export const router = new VueRouter({

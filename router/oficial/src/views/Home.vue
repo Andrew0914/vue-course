@@ -6,6 +6,9 @@
         <router-link :to="`/user/${user.id}`">{{user.name}}</router-link>
       </li>
     </ul>
+    <br>
+    <button @click="goToAbout"> Go to vision </button>
+    <button @click="goToUser"> Go user 144 </button>
   </div>
 </template>
 
@@ -20,6 +23,14 @@ export default {
         { id: 144, name: "Krusty" }
       ]
     };
+  },
+  methods: {
+    goToAbout(){
+      this.$router.push("/about/vision")
+    },
+    goToUser(){
+      this.$router.push({ name: 'user', params: { id: '144' } })
+    }
   }
 };
 </script>
