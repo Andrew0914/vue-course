@@ -16,24 +16,37 @@
     </button>
 
     <br>
-    
+
     <div v-if="hover"> You aare over the button</div>
 
+    <br>
+
+    <ButtonSum @sum="add"/>
+    <br>
+    <b>{{count}} </b>
   </div>
 </template>
 
 <script>
+import ButtonSum from './components/ButtomSum'
 
 export default {
   name: 'App',
+  components: {
+    ButtonSum
+  },
   data(){
     return {
-      hover: false
+      hover: false,
+      count: 1
     }
   },
   methods:{
     click(){
       alert("You clicked")
+    },
+    add(value){
+      this.count += value
     }
   }
 }
