@@ -1,7 +1,7 @@
 <template>
   <button class="action" @click="$emit(event)">
-    {{label}}
-    <img src="../assets/plus.png" />
+    <slot />
+    <slot name="icon"/>
   </button>
 </template>
 
@@ -9,10 +9,6 @@
 export default {
   name: "ActionButton",
   props: {
-    label: {
-      type: String,
-      required: true
-    },
     event: {
       type: String,
       default: 'click'

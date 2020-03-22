@@ -13,7 +13,17 @@
 
     <div class="game_description mb2">{{ description }}</div>
 
-    <ActionButton v-if="stock" class="game_button" @addToWishList="addToWishList" label="Add to wish list" event="addToWishList"/>
+    <ActionButton 
+      v-if="stock" 
+      class="game_button" 
+      @addToWishList="addToWishList" 
+      event="addToWishList">
+
+      Add to wish list
+      <img src="../assets/plus.png" slot="icon" />
+
+    </ActionButton>
+    
     <p v-else>sold out</p>
 
     <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
