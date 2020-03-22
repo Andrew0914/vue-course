@@ -7,7 +7,18 @@ import shared from "../mixins/shared";
 
 export default {
   name: "ComponentB",
-  mixins: [shared]
+  mixins: [shared],
+  data(){
+    return {
+        isVisible: false,
+        user:{
+            name: 'Sam',
+            address:{
+                street:"Street 8"
+            }
+        }
+    }
+  }
 };
 </script>
 
