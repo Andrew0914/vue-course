@@ -10,5 +10,10 @@ export default {
                 }
             }
         }
+    },
+    methods: {
+        sayHello(){
+            alert('Hello world')
+        }
     }
 }

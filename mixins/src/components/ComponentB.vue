@@ -1,5 +1,8 @@
 <template>
-  <h1>Component B</h1>
+  <div>
+    <h1>Component B</h1>
+    <button @click="sayHello">Say hello</button>
+  </div>
 </template>
 
 <script>
