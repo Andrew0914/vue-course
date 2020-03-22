@@ -1,6 +1,6 @@
 <template>
   <a :href="link" class="link">
-      My awesome link
+      <slot />
   </a>
 </template>
 
