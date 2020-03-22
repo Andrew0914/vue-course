@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyLink link="https://bunsan.io">
+    <!--<MyLink link="https://bunsan.io">
       Simple text
     </MyLink>
     <br><br>
@@ -12,22 +12,35 @@
       <OtherComponent title="Welcome!" info="Go home" />
     </MyLink>
 
-    <br><br>
+    <br><br>-->
 
-    <Post />
+    <Post>
+      <template slot="header">
+        <h1>Learning vue js</h1>
+      </template>
+      <p>
+        Vue js | Course 
+      </p>
+      <template slot="footer">
+        <footer>
+          andrew@bunsan.io
+        </footer>
+      </template>
+    </Post>
+
   </div>
 </template>
 
 <script>
-import MyLink from './components/MyLink'
-import OtherComponent from './components/OtherComponent'
+//import MyLink from './components/MyLink'
+//import OtherComponent from './components/OtherComponent'
 import Post from './components/Post'
 
 export default {
   name: 'App',
   components:{
-    MyLink,
-    OtherComponent,
+    /*MyLink,
+    OtherComponent,*/
     Post
   }
 }
