@@ -1,11 +1,20 @@
 <template>
   <div id="app">
+    <ComponentA />
+    <ComponentB />
   </div>
 </template>
 
 <script>
+import ComponentA from "./components/ComponentA"
+import ComponentB from "./components/ComponentB"
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    ComponentB,
+    ComponentA
+  }
 }
 </script>
 

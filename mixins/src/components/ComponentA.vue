@@ -3,11 +3,13 @@
 </template>
 
 <script>
-export default {
+import shared from "../mixins/shared";
 
-}
+export default {
+  name: "ComponentB",
+  mixins: [shared]
+};
 </script>
 
 <style>
-
 </style>
