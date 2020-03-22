@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <MyLink link="https://bunsan.io"/>
   </div>
 </template>
 
 <script>
-
+import MyLink from './components/MyLink'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    MyLink
+  }
 }
 </script>
 
