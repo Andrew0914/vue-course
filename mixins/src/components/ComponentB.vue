@@ -9,7 +9,13 @@
 import shared from "../mixins/shared";
 export default {
   name: "ComponentB",
-  mixins: [shared]
+  mixins: [shared],
+  created() {
+    console.info("Method CREATE from ComponentB");
+  },
+  mounted() {
+    console.info("Method MOUNTED from ComponentB");
+  }
 };
 </script>
 

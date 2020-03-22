@@ -15,5 +15,11 @@ export default {
         sayHello(){
             alert('Hello world')
         }
+    },
+    created(){
+        console.info('Method CREATE from shared mixin')
+    },
+    mounted(){
+        console.info('Method MOUNTED from shared mixin')
     }
 }

@@ -26,6 +26,12 @@ export default {
     sayHello(){
         alert('What´s up! world!')
     }
+  },
+  created() {
+    console.info("Method CREATE from ComponentA");
+  },
+  mounted() {
+    console.info("Method MOUNTED from ComponentA");
   }
 };
 </script>
