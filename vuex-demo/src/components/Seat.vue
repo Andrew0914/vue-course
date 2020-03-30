@@ -1,5 +1,5 @@
 <template>
-  <div class="seat" @click="take">{{ seatCode }}</div>
+  <div class="seat" :class="{seat_taked: taked}" @click="take" >{{ seatCode }}</div>
 </template>
 
 <script>
@@ -9,11 +9,15 @@ export default {
         seatCode:{
             type: String,
             required:true
+        },
+        taked: {
+            type: Boolean,
+            default: false
         }
     },
     methods:{
         take(){
-            console.log(this.seatCode)
+            this.$store.dispatch('take', this.seatCode)
         }
     }
 }
@@ -37,6 +41,10 @@ export default {
     }
 
     .seat:hover{
+        background-color: lightblue;
+    }
+
+    .seat_taked{
         background-color: lightblue;
     }
 </style>

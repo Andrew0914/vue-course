@@ -13,5 +13,19 @@ const initSeats = () => {
 export default {
     state:{
         seats: initSeats()
+    },
+    actions: {
+        take({state, commit}, seatCode){
+            const seat = state.seats.find( seat => seat.code === seatCode)
+            if(seat){
+                commit('takeSeat', seatCode)
+            }
+        }
+    },
+    mutations:{
+        takeSeat(state, seatCode){
+            const seat = state.seats.find( seat => seat.code === seatCode)
+            seat.taked = !seat.taked
+        }
     }
 }

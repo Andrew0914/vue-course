@@ -1,6 +1,6 @@
 <template>
   <div class="cinema_room">
-    <Seat v-for="(seat, index) in seats" :key="index" :seat-code="seat.code"/>
+    <Seat v-for="(seat, index) in seats" :key="index" :seat-code="seat.code" :taked="seat.taked"/>
   </div>
 </template>
 
