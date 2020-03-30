@@ -27,5 +27,13 @@ export default {
             const seat = state.seats.find( seat => seat.code === seatCode)
             seat.taked = !seat.taked
         }
+    },
+    getters: {
+        countTaked(state){
+            return state.seats.filter( seat => seat.taked ).length
+        },
+        countAvailable(state){
+            return state.seats.filter( seat => !seat.taked ).length
+        },
     }
 }

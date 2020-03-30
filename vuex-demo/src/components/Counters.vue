@@ -12,13 +12,15 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {    
     name: 'Counters',
-    data(){
-        return {
-            takedSeats: 0 ,
-            availableSeats: 0
-        }
+    computed:{
+        ...mapGetters({
+            takedSeats: 'countTaked',
+            availableSeats: 'countAvailable'
+        })
     }
 }
 </script>
