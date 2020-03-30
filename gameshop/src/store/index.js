@@ -8,6 +8,9 @@ export default {
   getters: {
     game: (state) => (id) =>  {
       return state.gameitems.find(item => item.id === id)
+    },
+    countItemsInCart(state){
+      return state.gamesInCart.length
     }
   },
   actions:{

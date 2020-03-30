@@ -51,7 +51,7 @@ export default {
     }),
     addToCart() {
       this.addGameToCart(this.id)
-      alert(`You have added to wishlist: ${this.game.name}`);
+      alert(`You have added to cart: ${this.game.name}`);
     },
   }
 };

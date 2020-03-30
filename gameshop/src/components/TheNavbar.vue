@@ -7,7 +7,11 @@
       :key="link.label"
       class="link"
     >{{ link.label }}</router-link>
-    <img src="../assets/shopping-cart.png" @click="openCar"/>
+    <div>
+      <img src="../assets/shopping-cart.png" @click="openCar"/>
+      <span>{{ $store.getters.countItemsInCart }}</span>
+    </div>
+    
   </nav>
 </template>
 
@@ -43,9 +47,19 @@ export default {
 .navbar img {
   width: 32px;
   height: 32px;
-  margin: 0 16px 0px auto;
   cursor: pointer;
 }
+
+.navbar div{
+  margin: 0 16px 0px auto;
+  min-width: 64px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
 .navbar .link {
   color: white;
   font-size: 20px;

@@ -27,7 +27,7 @@
       
       <p v-else>sold out</p>
     </div>
-    
+
     <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
 
     <div v-show="showDetails" class="game_description">{{ details }}</div>
@@ -111,7 +111,7 @@ export default {
     }),
     addToCart() {
       this.addGameToCart(this.id)
-      alert(`You have added to wishlist: ${this.name}`);
+      alert(`You have added to cart: ${this.name}`);
     },
     openDetails(id) {
       this.$router.push({ name: 'game', params: { id } });
