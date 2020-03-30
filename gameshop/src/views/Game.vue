@@ -14,8 +14,8 @@
       <ActionButton
         v-if="game.stock"
         class="game_button"
-        @addToWishList="addToWishList"
-        event="addToWishList"
+        @addToCart="addToCart"
+        event="addToCart"
       >
         Add to wish list
         <img src="../assets/plus.png" slot="icon" />
@@ -27,6 +27,7 @@
 
 <script>
 import ActionButton from "../components/ActionButton";
+import { mapActions } from "vuex";
 
 export default {
   name: "Game",
@@ -45,7 +46,11 @@ export default {
     }
   },
   methods:{
-    addToWishList() {
+    ...mapActions({
+      addGameToCart:"addGameToCart"
+    }),
+    addToCart() {
+      this.addGameToCart(this.id)
       alert(`You have added to wishlist: ${this.game.name}`);
     },
   }

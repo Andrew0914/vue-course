@@ -13,19 +13,21 @@
 
     <div class="game_description mb2">{{ description }}</div>
 
-    <ActionButton 
-      v-if="stock" 
-      class="game_button" 
-      @addToWishList="addToWishList" 
-      event="addToWishList">
+    <div v-if="!isFromCart">
+      <ActionButton 
+        v-if="stock" 
+        class="game_button" 
+        @addToCart="addToCart" 
+        event="addToCart">
 
-      Add to wish list
-      <img src="../assets/plus.png" slot="icon" />
+        Add to cart
+        <img src="../assets/plus.png" slot="icon" />
 
-    </ActionButton>
+      </ActionButton>
+      
+      <p v-else>sold out</p>
+    </div>
     
-    <p v-else>sold out</p>
-
     <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
 
     <div v-show="showDetails" class="game_description">{{ details }}</div>
@@ -35,6 +37,7 @@
 <script>
 import { isValidURL } from "@/utils/validations";
 import ActionButton from "./ActionButton"
+import { mapActions } from "vuex";
 
 export default {
   name: "GameItem",
@@ -80,6 +83,10 @@ export default {
     color: {
       type: String,
       default: "#F2F2F2"
+    },
+    isFromCart: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -99,7 +106,11 @@ export default {
     }
   },
   methods: {
-    addToWishList() {
+    ...mapActions({
+      addGameToCart:"addGameToCart"
+    }),
+    addToCart() {
+      this.addGameToCart(this.id)
       alert(`You have added to wishlist: ${this.name}`);
     },
     openDetails(id) {
@@ -159,7 +170,7 @@ export default {
 }
 
 .game_button {
-  width: 70%;
+  width: 60%;
   margin: 8px auto;
 }
 </style>
