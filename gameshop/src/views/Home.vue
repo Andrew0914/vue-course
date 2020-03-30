@@ -18,17 +18,15 @@
 
 <script>
 import GameItem from "@/components/GameItem";
-import { gameitems } from "../gameitems";
+import {mapState} from 'vuex'
 
 export default {
   name: "Home",
   components: {
     GameItem
   },
-  data() {
-    return {
-      gameitems
-    };
+  computed:{
+    ...mapState(['gameitems'])
   }
 };
 </script>

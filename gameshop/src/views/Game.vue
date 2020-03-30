@@ -11,17 +11,28 @@
       <span>Precio:</span>
       <span>${{ game.price }}</span>
       <br />
-      <button v-if="game.stock" class="game_button" >Add to wish lit</button>
+      <ActionButton
+        v-if="game.stock"
+        class="game_button"
+        @addToWishList="addToWishList"
+        event="addToWishList"
+      >
+        Add to wish list
+        <img src="../assets/plus.png" slot="icon" />
+      </ActionButton>
       <p v-else>sold out</p>
     </div>
   </div>
 </template>
 
 <script>
-import { gameitems } from "../gameitems";
+import ActionButton from "../components/ActionButton";
 
 export default {
   name: "Game",
+  components: {
+    ActionButton
+  },
   props: {
     id: {
       type: Number,
@@ -30,8 +41,13 @@ export default {
   },
   computed: {
     game() {
-      return gameitems.find(item => item.id == this.id);
+      return this.$store.getters.game(this.id);
     }
+  },
+  methods:{
+    addToWishList() {
+      alert(`You have added to wishlist: ${this.game.name}`);
+    },
   }
 };
 </script>
@@ -49,5 +65,11 @@ export default {
   width: 205px;
   height: 253px;
   margin-right: 16px;
+}
+
+.game_button {
+  width: 160px;
+  height: 32px;
+  margin: 32px 4px;
 }
 </style>
