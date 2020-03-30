@@ -1,20 +1,22 @@
 <template>
   <div class="cinema_room">
-    <Seat v-for="(seat, index) in seats" :key="index" :seat-code="seat"/>
+    <Seat v-for="(seat, index) in seats" :key="index" :seat-code="seat.code"/>
   </div>
 </template>
 
 <script>
 import Seat from './Seat'
+import { mapState } from "vuex";
 export default {
     name: 'CinemaRoom',
     components: {
         Seat
     },
-    data(){
-        return {
-            seats: ["a","b","c","d", "e", "f", "g" , "h","a","b","c","d", "e", "f", "g" , "h","a","b","c","d", "e", "f", "g" , "h","a"]
-        }
+    computed:{
+        /*seats(){
+            return this.$store.state.seats
+        },*/
+        ...mapState(['seats'])
     }
 }
 </script>
