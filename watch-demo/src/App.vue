@@ -1,17 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <label for="metros">
+      Metros:
+      <br>
+      <input type="text" name="metros" v-model="metros">
+    </label>
+    <br>
+    <label>
+      Kilometros
+      <br>
+      <input type="text" name="kilometros" v-model="kilometros">
+    </label>
+    <br>
+    <div>
+      {{ `${metros} metros` }}
+      <br>
+      {{ `${kilometros} kilometros` }}
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      metros: 0,
+      kilometros: 0
+    }
   }
 }
 </script>
@@ -24,5 +41,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+input{
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 32px;
+  margin-bottom: 16px;
+}
+
+#app div{
+  line-height: 32px;
+  font-size: 24px;
 }
 </style>
