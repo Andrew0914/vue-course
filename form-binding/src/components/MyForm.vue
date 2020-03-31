@@ -3,18 +3,18 @@
     <!-- NORMAL INPUT-->
     <div class="form-group">
       <label>Email address</label>
-      <input type="email" class="form-control" v-model="email"/>
+      <input type="email" class="form-control" v-model="email" value="andrew@bunsan.io"/>
     </div>
 
     <!--TEXTAREA-->
     <div class="form-group">
       <label>Example textarea</label>
-      <textarea class="form-control"  rows="3" v-model="text"></textarea>
+      <textarea class="form-control"  rows="3" v-model="text">{{ message }}</textarea>
     </div>
 
     <!--CHECKBOX-->
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="defaultCheck1" v-model="check"/>
+      <input class="form-check-input" type="checkbox" id="defaultCheck1" v-model="check" checked />
       <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
     </div>
 
@@ -45,9 +45,9 @@
     </div>
 
     <br>
-    
+
     <!-- SELECT -->
-    <select class="form-control" v-model="fruit">
+    <select class="form-control" v-model="fruit" selected="apple">
       <option disabled value="">Please select one</option>
       <option value="apple">Apple</option>
       <option value="lemon">Lemon</option>
@@ -64,7 +64,8 @@ export default {
       text:'',
       check: false,
       option: 'option1',
-      fruit:''
+      fruit:'',
+      message:'HELLO WORLD'
     }
   }
 };
