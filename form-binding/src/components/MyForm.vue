@@ -6,10 +6,22 @@
       <input type="email" class="form-control" v-model="email" value="andrew@bunsan.io"/>
     </div>
 
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" class="form-control" v-model.number="age"/>
+      <b>{{ ageType }}</b>
+    </div>
+
+
+    <div class="form-group">
+      <label>Simple Text</label>
+      <input type="text" class="form-control" v-model.trim="simpleText"/>
+    </div>
+
     <!--TEXTAREA-->
     <div class="form-group">
       <label>Example textarea</label>
-      <textarea class="form-control"  rows="3" v-model="text">{{ message }}</textarea>
+      <textarea class="form-control"  rows="3" v-model.lazy="text"></textarea>
     </div>
 
     <!--CHECKBOX-->
@@ -65,8 +77,14 @@ export default {
       check: false,
       option: 'option1',
       fruit:'',
-      message:'HELLO WORLD'
+      age:0,
+      simpleText: ''
     }
+  },
+  computed:{
+    ageType(){
+      return typeof this.age
+    }  
   }
 };
 </script>
