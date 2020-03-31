@@ -29,6 +29,14 @@ export default {
       metros: 0,
       kilometros: 0
     }
+  },
+  watch:{
+    metros: function(m){
+      this.kilometros=m/1000
+    },
+    kilometros: function(km){
+      this.metros = km * 1000
+    }
   }
 }
 </script>
