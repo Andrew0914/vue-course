@@ -12,6 +12,14 @@
       <small class="error" v-show="$v.form.age.$error">Error</small>
     </div>
 
+    <h4 class="error" v-show="$v.form.$anyError">
+        The form has errors
+    </h4>
+
+    <h4 class="error" v-show="$v.form.$error">
+        The form is completely wrong!
+    </h4>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </template>
