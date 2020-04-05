@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <input type="text" placeholder="Input 1" />
+    <br />
+    <br />
+    <input type="text" placeholder="Input 2" v-focus />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  directives: {
+    focus: {
+      // directive definition
+      inserted: function(el) {
+        el.focus();
+      }
+    }
   }
 }
 </script>
@@ -24,5 +30,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+input {
+  min-height: 32px;
+  min-width: 214px;
 }
 </style>
