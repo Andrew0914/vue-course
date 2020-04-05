@@ -15,6 +15,13 @@ export default {
         const speedName = binding.arg || 'normal';
         const speed = speeds[speedName];
 
+        // modifiers
+        const modifiers = binding.modifiers;
+        if (modifiers.underline)
+            el.style.textDecoration = 'underline';
+        if (modifiers.size72)
+            el.style.fontSize = '72px';
+
         // podemos guardar la referencia para usarla en unbind
         el.__ColorInterval__ = setInterval(() => {
             el.style.color = colors[i++];

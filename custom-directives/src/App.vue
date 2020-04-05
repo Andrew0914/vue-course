@@ -5,7 +5,7 @@
     <br />
     <input type="text" placeholder="Input 2" v-focus />
     <br>
-    <h1 v-party:crazy="colors">Hello world</h1>
+    <h1 v-party:crazy.size72.underline="colors">Hello world</h1>
   </div>
 </template>
 
