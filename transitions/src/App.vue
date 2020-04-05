@@ -1,12 +1,21 @@
 <template>
   <div id="app">
+    <button @click="show = !show">Show/Hide</button>
+    <p v-show="show">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti sequi, aperiam animi quisquam ab repellat distinctio esse culpa magni ipsum expedita blanditiis maiores totam veritatis, consequatur iste, odio impedit! Perspiciatis.
+    </p>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return {
+      show: false
+    }
+  }
 }
 </script>
 
@@ -17,6 +26,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px auto;
+  max-width: 25%;
+
 }
 </style>
