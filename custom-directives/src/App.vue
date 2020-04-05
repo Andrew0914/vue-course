@@ -4,19 +4,28 @@
     <br />
     <br />
     <input type="text" placeholder="Input 2" v-focus />
+    <br>
+    <h1 v-party="colors">Hello world</h1>
   </div>
 </template>
 
 <script>
+import party from "./directives/party";
 
 export default {
   name: 'App',
   directives: {
+    party,
     focus: {
       // directive definition
       inserted: function(el) {
         el.focus();
       }
+    }
+  },
+  data(){
+    return {
+      colors: ["red","blue","yellow","green"]
     }
   }
 }
