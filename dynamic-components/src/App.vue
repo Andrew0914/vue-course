@@ -4,13 +4,22 @@
       <span @click="tab='posts'" :class="{active_tab: tab==='posts'}">Posts</span>
       <span @click="tab='archive'" :class="{active_tab: tab==='archive'}">Archive</span>
     </div>
-    <div class="content"></div>
+    <div class="content">
+      <component :is="tab"></component>
+    </div>
   </div>
 </template>
 
 <script>
+import Posts from "./components/Posts";
+import Archive from "./components/Archive";
+
 export default {
   name: "App",
+  components: {
+    posts: Posts,
+    archive: Archive
+  },
   data() {
     return {
       tab: "posts"
