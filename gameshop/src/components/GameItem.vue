@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import { isValidURL } from "@/utils/validations";
-import ActionButton from "./ActionButton"
+import { isValidURL } from "../utils/validations.js";
+import ActionButton from "./ActionButton.vue"
 import { mapActions } from "vuex";
 
 export default {
