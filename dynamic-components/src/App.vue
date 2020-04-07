@@ -5,7 +5,9 @@
       <span @click="tab='archive'" :class="{active_tab: tab==='archive'}">Archive</span>
     </div>
     <div class="content">
-      <component :is="tab"></component>
+      <keep-alive :exclude="['archive']">
+        <component :is="tab"></component>
+      </keep-alive>
     </div>
   </div>
 </template>
