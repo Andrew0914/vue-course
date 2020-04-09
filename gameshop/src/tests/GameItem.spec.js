@@ -14,6 +14,8 @@ const propsData = {
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
+window.alert = jest.fn()
+
 describe("DOM & html", () => {
   it("Simple render HTML", () => {
     const gameItem = mount(GameItem, { propsData });

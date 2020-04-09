@@ -16,7 +16,6 @@ export default {
   actions:{
     addGameToCart({state,commit},id){
       const game = state.gameitems.find(item => item.id === id)
-      console.log(game)
       if(game){
         commit('addToCart', game)
       }
