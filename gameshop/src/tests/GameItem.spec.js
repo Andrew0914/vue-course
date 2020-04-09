@@ -14,7 +14,7 @@ const propsData = {
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-window.alert = jest.fn()
+window.alert = jest.fn();
 
 describe("DOM & html", () => {
   it("Simple render HTML", () => {
@@ -24,9 +24,8 @@ describe("DOM & html", () => {
 });
 
 describe("vuex", () => {
-  
   let gameItem = null;
-  let store = null
+  let store = null;
 
   beforeEach(() => {
     store = new Vuex.Store(gameStore);
@@ -34,8 +33,24 @@ describe("vuex", () => {
   });
 
   it("Item was added to cart", () => {
-    gameItem.vm.addToCart(100)
-    expect(store.state.gamesInCart.length).toBe(1)
+    gameItem.vm.addToCart(100);
+    expect(store.state.gamesInCart.length).toBe(1);
+  });
+});
+
+describe("Computed properties", () => {
+  it("Game states whhe is new", () => {
+    const mProps = { ...propsData };
+    mProps.isNew = true;
+    const gameItem = mount(GameItem, { propsData: mProps });
+    expect(gameItem.vm.gameStatus).toEqual({
+      status: "New",
+      appereance: { game_new: true },
+    });
   });
 
+  it("Game item validate a valid urlImage", () => {
+    const gameItem = mount(GameItem, { propsData });
+    expect(gameItem.vm.$options.props.urlImage.validator("SOMETHING_WRONG")).toBeFalsy()
+  })
 });
