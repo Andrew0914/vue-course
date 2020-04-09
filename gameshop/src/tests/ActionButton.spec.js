@@ -8,3 +8,12 @@ it('Test button event', () => {
 
     expect(actionButton.emitted().test).toBeTruthy()
 })
+
+it("Insert content in slots", () => {
+    const actionButton = mount(ActionButton, {propsData: {event: "test"}, slots: {
+        icon: "<img/>",
+        default: "HELLO"
+    }})
+
+    expect(actionButton).toMatchSnapshot()
+})
