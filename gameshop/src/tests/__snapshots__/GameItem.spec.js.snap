@@ -15,3 +15,21 @@ exports[`DOM & html Simple render HTML 1`] = `
   <div class="game_description" style="display: none;"></div>
 </div>
 `;
+
+exports[`DOM & html Simple render HTML with child stubs 1`] = `
+<div class="game" style="border-color: #f2f2f2;"><a href="#" class="mb2"><img src="https://games.com/media/sonic.png" alt="Game" class="game_image">
+    Game
+  </a>
+  <div class="game_price mb2">
+    <p class="game_new game_condition">New</p> <span>Precio:</span> <span>$800</span>
+  </div>
+  <div class="game_description mb2"></div>
+  <div>
+    <actionbutton-stub event="addToCart" class="game_button">
+
+      Add to cart
+      <img src="../assets/plus.png"></actionbutton-stub>
+  </div> <a href="#" class="mb2">More details</a>
+  <div class="game_description" style="display: none;"></div>
+</div>
+`;

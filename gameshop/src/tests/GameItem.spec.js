@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from "@vue/test-utils";
+import { mount, createLocalVue, shallowMount } from "@vue/test-utils";
 import GameItem from "../components/GameItem.vue";
 import gameStore from "../store/index.js";
 import Vuex from "vuex";
@@ -19,6 +19,11 @@ window.alert = jest.fn();
 describe("DOM & html", () => {
   it("Simple render HTML", () => {
     const gameItem = mount(GameItem, { propsData });
+    expect(gameItem).toMatchSnapshot();
+  });
+
+  it("Simple render HTML with child stubs", () => {
+    const gameItem = shallowMount(GameItem, { propsData });
     expect(gameItem).toMatchSnapshot();
   });
 });
