@@ -7,7 +7,7 @@
 
     <div class="game_price mb2">
       <p :class="[gameStatus.appereance, 'game_condition']">{{ gameStatus.status }}</p>
-      <span>Precio:</span>
+      <span>{{ $t("price") }}:</span>
       <span>${{ price }}</span>
     </div>
 
@@ -20,15 +20,15 @@
         @addToCart="addToCart" 
         event="addToCart">
 
-        Add to cart
+        {{ $t("add_to_car") }}
         <img src="../assets/plus.png" slot="icon" />
 
       </ActionButton>
       
-      <p v-else>sold out</p>
+      <p v-else>{{ $t("sold_out") }}</p>
     </div>
 
-    <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">More details</a>
+    <a href="#" @click.prevent="showDetails = !showDetails" class="mb2">{{ $t("more_details") }}</a>
 
     <div v-show="showDetails" class="game_description">{{ details }}</div>
   </div>
