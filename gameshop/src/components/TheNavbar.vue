@@ -11,13 +11,17 @@
       <img src="../assets/shopping-cart.png" @click="openCar"/>
       <span>{{ $store.getters.countItemsInCart }}</span>
     </div>
-    
+    <LanguageChoise/>
   </nav>
 </template>
 
 <script>
+import LanguageChoise from "./LanguageChoise";
 export default {
   name: "TheNavbar",
+  components:{
+    LanguageChoise
+  },
   props: {
     links: {
       type: Array,
