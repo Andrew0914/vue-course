@@ -100,7 +100,7 @@ export default {
     },
     gameStatus() {
       return {
-        status: this.isNew ? "New" : "Used",
+        status: this.isNew ? this.$t("new") : this.$t("used"),
         appereance: { game_new: this.isNew }
       };
     }
@@ -170,7 +170,7 @@ export default {
 }
 
 .game_button {
-  width: 60%;
+  width: 80%;
   margin: 8px auto;
 }
 </style>

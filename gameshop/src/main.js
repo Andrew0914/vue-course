@@ -13,7 +13,7 @@ Vue.use(Vuex)
 Vue.config.productionTip = false
 
 const store = new Vuex.Store(gameStore)
-const i18n = new VueI18n({locale: 'en', messages})
+const i18n = new VueI18n({locale: localStorage.getItem("gameshop_locale") || "en", messages})
 
 new Vue({
   i18n,
